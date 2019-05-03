@@ -4,7 +4,7 @@ const Projects = require('./projects-model');
 
 router.get('/', (req, res) => {
     Projects
-        .getProjects()
+        .get()
         .then(projects => {
             res.status(200).json(projects);
         })
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     const { id } = req.params;
     Projects
-        .getProject(id)
+        .get(id)
         .then(project => {
             if (project) {
                 res.status(200).json(project);

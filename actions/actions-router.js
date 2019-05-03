@@ -4,7 +4,7 @@ const Actions = require('./actions-model');
 
 router.get('/', (req, res) => {
     Actions
-        .getActions()
+        .get()
         .then(actions => {
             res.status(200).json(actions);
         })

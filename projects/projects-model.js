@@ -2,17 +2,16 @@ const db = require('../data/dbConfig');
 const mappers = require('../mappers/mappers');
 
 module.exports = {
-    getProjects,
-    getProject,
+    get,
     getProjectActions,
     addProject,
 }
 
-function getProjects() {
+function get() {
     return db('projects');
 }
 
-function getProject(id) {
+function get(id) {
     let query = db('projects as p');
   
     if (id) {
