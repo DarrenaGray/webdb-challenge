@@ -1,18 +1,24 @@
 const db = require('../data/dbConfig');
+const mappers = require('../mappers/mappers');
 
 module.exports = {
-    getActions,
-    addAction,
-}
-
-function getActions() {
-    return db('actions');
-}
-
-function addAction(action) {
-    return db('actions')
+    getActions: function(id) {
+      let query = db('actions');
+  
+      if (id) {
+        return query
+          .where('id', id)
+          .first()
+          .then(action => mappers.actionToBody(action));
+      }
+  
+      return query.then(actions => {
+        return actions.map(action => mappers.actionToBody(action));
+      });
+    },
+    addAction: function(action) {
+      return db('actions')
         .insert(action)
-        .then(ids => {
-            return({ id: ids[0] })
-        });
+        .then(([id]) => this.get(id));
+    },
 }
