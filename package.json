@@ -1,0 +1,19 @@
+{
+	"name": "webdb-challenge",
+	"version": "1.0.0",
+	"description": "In this challenge, you design and build an application for managing Projects and Actions in the spirit of David Allen's Getting Things Done (GTD) methodology.",
+	"main": "index.js",
+	"dependencies": {},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DarrenaGray/webdb-challenge.git"
+	},
+	"bugs": {
+		"url": "https://github.com/DarrenaGray/webdb-challenge/issues"
+	},
+	"homepage": "https://github.com/DarrenaGray/webdb-challenge#readme"
+}
