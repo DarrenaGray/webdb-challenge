@@ -21,4 +21,15 @@ module.exports = {
         .insert(action)
         .then(([id]) => this.get(id));
     },
-}
+    updAction: function(id, changes) {
+      return db('actions')
+        .where('id', id)
+        .update(changes)
+        .then(count => (count > 0 ? this.get(id) : null));
+    },
+    delAction: function(id) {
+      return db('actions')
+        .where('id', id)
+        .del();
+    },
+};
